@@ -44,7 +44,7 @@ class Application:
         self.console = Text(root, state='disabled', height=10, background='DodgerBlue4', foreground='goldenrod')
         sys.stdout = TextRedirector(self.console)  # redirect print to GUI
         self.console.grid(row=len(config['files']) + 2, column=0, columnspan=3, sticky='nsew')
-        self.scroll_bar = ttk.Scrollbar(root, orient=VERTICAL, comman=self.console.yview)
+        self.scroll_bar = ttk.Scrollbar(root, orient=VERTICAL, command=self.console.yview)
         self.console.config(yscrollcommand=self.scroll_bar.set)
         self.scroll_bar.grid(row=len(config['files']) + 2, column=3, sticky='ns')
 
